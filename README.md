@@ -6,9 +6,9 @@ Members: Omar Pascual, Ally McMullen, Connor Sadoff, Tekalegn Gemeda
 
 Selected Projection:
 
-CPU-PXZ:
+CPU-PXZ: A parallel lossless data compression utility that uses the LZMA algorithm (Lempel-Ziv-Markov chain-Algorithm) It uses a dictionary compression scheme
 
-Network Latency
+Network Latency - netperf: The network request response benchmark can help measure report round-trip latency
 
 Redis: High performance, rich API and widespreasd use among PaaS providers (e.g, amazon, Elasticache, google compute engine) |
 
