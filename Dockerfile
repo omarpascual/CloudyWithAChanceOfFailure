@@ -11,12 +11,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server net-tools
 
 # Exposed ENV
 ADD mysql-opt.cnf /etc/mysql/conf.d/mysql-opt.cnf
-ADD install-mysql.sh /install-mysql.sh
+ADD install_mysql.sh /install_mysql.sh
 ADD run.sh /run.sh
 
 RUN rm -rf /var/lib/mysql/*
 
-RUN /install-mysql.sh
+RUN /install_mysql.sh
 
 # Add VOLUMEs to allow backup of config and databases
 
