@@ -1,14 +1,25 @@
   
-# Create the docker image and container
+#!/bin/bash
 
-docker build -t "mysql-single" .
+checkIfMysqlRunning() {
+while true
+do
+	echo "Checking if mysqld is running and available" 
+	netstatRes=`netstat -an | grep 3306 | grep LISTEN` 
+	if [ "x${netstatRes}x" != "xx" ]
+	then	
+		return;
+	fi
+	sleep 1
+done
+}
 
-# Run a container with that image
-
-docker run -d -p 3307:3306 mysql-single
-
-# Check the admin password
-
-docker logs ff1cc6a87214
-
-docker run -d --net=host -v  /home/acme-air/mysql-data:/home/mysql  mysql-single /bin/bash -c "/usr/bin/mysql_install_db"
+/usr/bin/mysql_install_db
+/usr/bin/mysqld_safe&
+checkIfMysqlRunning
+mysql -uroot -h127.0.0.1 -e "CREATE USER 'root'@'%' IDENTIFIED BY 'supervisor'"
+mysql -uroot -h127.0.0.1 -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION"
+mysql -uroot -h127.0.0.1 -e "CREATE USER 'admin'@'%' IDENTIFIED BY 'supervisor'"
+mysql -uroot -h127.0.0.1 -e "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION"
+mysqladmin -uroot -h127.0.0.1 password 'supervisor' 
+mysqladmin -uroot -psupervisor -h127.0.0.1 shutdown
