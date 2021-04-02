@@ -6,7 +6,7 @@ Members: Omar Pascual, Ally McMullen, Connor Sadoff, Tekalegn Gemeda
 
 Selected Projection:
 
-CPU-PXZ: A parallel lossless data compression utility that uses the LZMA algorithm (Lempel-Ziv-Markov chain-Algorithm) It uses a dictionary compression scheme
+Linpack: Solves a dense system of linear equations using an algorithm that carries out LU factorization with partial pivoting
 
 Network Latency - netperf: The network request response benchmark can help measure report round-trip latency
 
