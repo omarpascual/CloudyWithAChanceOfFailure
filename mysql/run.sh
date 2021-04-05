@@ -1,4 +1,3 @@
-  
 #!/bin/bash
 
 DATABASDIR=/home/mysql
