@@ -16,7 +16,7 @@ ADD run.sh /run.sh
 
 RUN rm -rf /var/lib/mysql/*
 
-RUN /install-mysql.sh
+#RUN /install-mysql.sh
 
 VOLUME  ["/home/mysql","/etc/mysql", "/var/lib/mysql"]
 EXPOSE 3306
