@@ -1,25 +1,16 @@
+  
 #!/bin/bash
 
-DATABASDIR=/home/mysql
-
-NFILES=`ls -l $DATABASEDIR/ibdata* 2>/dev/null | wc -l` 
-
-checkIfMysqldIsRunning() {
-while true
+runId=0
+while [ $runId -lt 10 ]
 do
-	echo "Checking if mysqld is running and available" 
-	nProc=`ps -ef | grep mysqld | grep -v grep | wc -l` 
-	if [ $nProc -lt 1 ]
-	then	
-		return;
-	fi
-	sleep 1
+				numCli=10
+				while [ $numCli -lt 180 ]
+				do
+								sysbench --test=oltp --oltp-table-size=2000000 --mysql-db=test --mysql-host=arldcn24 --mysql-user=admin --mysql-port=3306 --mysql-password=supervisor --max-time=60 --oltp-read-only=on --max-requests=0 --num-threads=$numCli
+ run
+								sleep 5
+								numCli=$(($numCli + 10))
+				done > /tmp/results-2000000-docker-hostnet-hostfs$runId
+				runId=$(($runId + 1))
 done
-}
-
-if [ $NFILES -lt 1 ]
-then
-	./install-mysql.sh
-	checkIfMysqldIsRunning
-fi
-exec /usr/bin/mysqld_safe
