@@ -12,4 +12,4 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server net-tools
 
 ADD mysql-opt.cnf /etc/mysql/conf.d/mysql-opt.cnf
 ADD install-mysql.sh /install-mysql.sh
-ADD run.sh /run.sh
+#ADD run.sh /run.sh
