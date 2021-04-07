@@ -22,4 +22,4 @@ then
 	./install-mysql.sh
 	checkIfMysqldIsRunning
 fi
-exec /usr/bin/mysqld_safe
+exec /usr/bin/mysqld_safe "$@"
