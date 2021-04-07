@@ -20,4 +20,4 @@ ADD run.sh /run.sh
 
 VOLUME  ["/home/mysql","/etc/mysql", "/var/lib/mysql"]
 EXPOSE 3306
-CMD ["/run.sh"]
+#CMD ["/run.sh"]
