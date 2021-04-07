@@ -21,4 +21,4 @@ RUN rm -rf /var/lib/mysql/*
 
 VOLUME  ["/home/mysql","/etc/mysql", "/var/lib/mysql"]
 EXPOSE 3306
-CMD []
+#CMD []
