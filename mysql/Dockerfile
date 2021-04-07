@@ -14,10 +14,10 @@ ADD mysql-opt.cnf /etc/mysql/conf.d/mysql-opt.cnf
 ADD install-mysql.sh /install-mysql.sh
 ADD run.sh /run.sh
 
-RUN rm -rf /var/lib/mysql/*
+#RUN rm -rf /var/lib/mysql/*
 
-#RUN /install-mysql.sh
+RUN /install-mysql.sh
 
 VOLUME  ["/home/mysql","/etc/mysql", "/var/lib/mysql"]
 EXPOSE 3306
-#CMD ["/run.sh"]
+CMD ["/run.sh"]
