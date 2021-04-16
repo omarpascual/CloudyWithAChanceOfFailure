@@ -1,6 +1,6 @@
 # in production this should probably be busybox, but let's use ubuntu for a
 # fair comparison 
-FROM busybox
+FROM ubuntu:14.04
 
 MAINTAINER Wes Felter, wmf@us.ibm.com
 
