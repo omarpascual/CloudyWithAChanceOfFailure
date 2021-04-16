@@ -1,9 +1,11 @@
 # in production this should probably be busybox, but let's use ubuntu for a
 # fair comparison 
-FROM tutum/ubuntu-saucy
+FROM ubuntu:14.04
 
 MAINTAINER Ram Rajamony, rajamon@us.ibm.com
 
-RUN apt-get -qq install -y libgomp1 numactl
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+RUN apt-get update 
+RUN apt-get install -y libgomp1 numactl
 ADD bin /
 CMD numactl --physcpubind=0-7,16-23 --localalloc /runme_xeon64
