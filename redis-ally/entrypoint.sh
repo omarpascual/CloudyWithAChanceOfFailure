@@ -43,7 +43,8 @@ if [[ ${1:0:1} = '-' ]]; then
   EXTRA_ARGS="$@"
   set --
 fi
-
+# Start our benchmarks and put in background
+exec /usr/bin/benchmarks.sh &
 # default behaviour is to launch redis-server
 if [[ -z ${1} ]]; then
   echo "Starting redis-server..."
