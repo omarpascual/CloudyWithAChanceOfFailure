@@ -17,6 +17,10 @@ RUN apt-get update \
  && sed 's/^# unixsocketperm 700/unixsocketperm 777/' -i /etc/redis/redis.conf \
  && rm -rf /var/lib/apt/lists/*
 
+
+COPY benchmarks.sh /usr/bin/benchmarks.sh
+RUN chmod 755 /usr/bin/benchmarks.sh
+
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
 
