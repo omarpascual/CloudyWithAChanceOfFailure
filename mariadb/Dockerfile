@@ -33,6 +33,8 @@ RUN \
  apt-get update && \
  apt-get install -y \
 	${MARIADB} && \
+ apt-get install -y \
+	sysbench && \
  echo "**** cleanup ****" && \
  rm -rf \
 	/tmp/* \
@@ -44,7 +46,10 @@ RUN \
 
 # add local files
 COPY root/ /
+COPY benchmarks.sh /usr/bin/benchmarks.sh
+RUN chmod 755 /usr/bin/benchmarks.sh
 
 # ports and volumes
 EXPOSE 3306
 VOLUME /config
+CMD ["/usr/bin/benchmarks.sh"]
