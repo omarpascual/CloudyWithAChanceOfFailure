@@ -171,3 +171,9 @@ For debugging and maintenance purposes you may want access the containers shell.
 ```bash
 docker exec -it redis bash
 ```
+# How to start it up
+docker build -t redis . //Builds Dockerfile
+docker run --name redis -d --publish 6379:6379 redis //Creates Container
+docker exec -it redis bash
+redis-cli incr mycounter
+redis-benchmark --csv
