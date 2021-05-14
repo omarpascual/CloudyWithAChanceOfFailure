@@ -21,13 +21,11 @@ MySQL: Widely used in the cloud that typically stresses memory, IPC, filesystem,
 
 
 LINPACK COMMANDS:
-
 docker build -t linpack .
 docker run linpack
 
 
 MYSQL COMMANDS:
-
 docker build -t "mysql-single" .
 docker run --name mysql -d -p 3306:3306 -e MYSQL_PASS="password" tutum/mysql
 docker ps
@@ -37,7 +35,6 @@ mysql -uadmin -ppassword -h127.0.0.1 -P3306
 
 
 NETPERF COMMANDS:
-
 sudo apt-get update
 sudo apt-get install -y netperf
 cp /usr/bin/netserver . 
@@ -51,7 +48,6 @@ netperf -l 60 -H [eth0 IP address] -t UDP_RR -- -r 100,200
 
 
 REDIS COMMANDS: 
-
  docker build -t redis .       
  docker run --name redis -d --publish 6379:6379 redis   
  docker exec -it redis bash    
