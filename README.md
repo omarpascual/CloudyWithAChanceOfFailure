@@ -28,7 +28,7 @@ LINPACK COMMANDS:
 - docker run linpack
 
 
-MYSQL COMMANDS:
+MARIADB/MYSQL COMMANDS:
 - docker build -t "mysql-single" .
 - docker run --name mysql -d -p 3306:3306 -e MYSQL_PASS="password" tutum/mysql
 - docker exec -it mysql bash
