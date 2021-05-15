@@ -49,4 +49,4 @@ REDIS COMMANDS:
  docker run --name redis -d --publish 6379:6379 redis
  docker exec -it redis bash
  redis-benchmark --csv
-
+ 
