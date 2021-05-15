@@ -4,7 +4,7 @@ CSC468 Cloud Computing
 Members: Omar Pascual, Ally McMullen, Connor Sadoff, Tekalegn Gemeda
 
 
-Selected Projection:
+## Performance Evaluation
 
 Linpack: Solves a dense system of linear equations using an algorithm that carries out LU factorization with partial pivoting
 
