@@ -18,7 +18,9 @@ MySQL: Widely used in the cloud that typically stresses memory, IPC, filesystem,
 ## Instantiate CloudLab Profile
 Click Instantiate at the bottom of the linked page to instantiate the CloudLab experiment from the main branch of this GitHub repository.
 https://www.cloudlab.us/show-profile.php?uuid=d34e5707-7dc7-11eb-b1eb-e4434b2381fc
-Once the experiment is fully deployed, ssh into the head node and clone the GitHub repository with this command: git clone https://github.com/omarpascual/CloudyWithAChanceOfFailure.git
+
+Once the experiment is fully deployed, ssh into the head node and clone the GitHub repository with this command: 
+- git clone https://github.com/omarpascual/CloudyWithAChanceOfFailure.git
 
 ## Running The Benchmarks
 To run a benchmark, cd into the GitHub repository and then cd into the folder with the name of the benchmark. Finally, run the following commands for that benchmark: 
