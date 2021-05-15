@@ -17,6 +17,9 @@ MySQL: Widely used in the cloud that typically stresses memory, IPC, filesystem,
 
 
 
+#Running The Benchmarks
+To run the benchmarks, cd into its respective folder in the Github repository and then run the following commands for the benchmark: 
+
 
 
 
