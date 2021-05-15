@@ -15,7 +15,9 @@ Redis: High performance, rich API and widespreasd use among PaaS providers (e.g,
 MySQL: Widely used in the cloud that typically stresses memory, IPC, filesystem, and networking subsystem | Running normally on Linux (native) | Under Docker using host networking and a volume (Docker new = host volume), using a volume but normal Docker networking (Docker NAT volume), storing database within the container filesystem (Docker NAT AUFS), and running under KVM
 
 
-
+## Instantiate CloudLab Profile
+Click Instantiate at the bottom of the linked page to instantiate the CloudLab experiment from the main branch of this GitHub repository.
+https://www.cloudlab.us/show-profile.php?uuid=d34e5707-7dc7-11eb-b1eb-e4434b2381fc
 
 ## Running The Benchmarks
 To run a benchmark, cd into the folder with the name of the benchmark in the GitHub repository and then run the following commands for that benchmark: 
